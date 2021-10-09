@@ -9,6 +9,6 @@ RUN cd /build && git clone https://github.com/echenim/distributed-web.git
 
 RUN cd /build/distributed-web/src && go build -o web-app
 
-EXPOSE 30000
+EXPOSE 31000
 
 ENTRYPOINT [ "/build/distributed-web/src/web-app" ]
