@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: distributed
+  name: fin-tech
 spec:
   selector:
     matchLabels:
-      app: distributed
+      app: fin-tech
   template:
     metadata:
       labels:
-        app: distributed
+        app: fin-tech
     spec:
       containers:
-      - name: distributed
-        image: echenim007/distributed:v1.0.1
+      - name: fin-tech
+        image: echenim007/fin-tech:1.0.0
         resources:
           limits:
             memory: "128Mi"
@@ -24,10 +24,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: distributed
+  name: fin-tech
 spec:
   selector:
-    app: distributed
+    app: fin-tech
   ports:
     - protocol: TCP
       port: 8181
