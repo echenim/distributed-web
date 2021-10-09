@@ -1,20 +1,20 @@
 # distributed-web
 
 # create docker image
-docker build -t distributed . 
+docker build -t fin-tech . 
 
 # check if image is created
 docker image ls
 
 # run application from docker
-docker run -p 29999:29999 -tid distributed
+docker run -p 29999:29999 -tid fin-tech
 
 sudo lsof -nP -iTCP -sTCP:LISTEN
 
 # Push to dockerhub
 docker login --username=echenim007
-docker tag distributed echenim007/distributed:v1.0.1
-docker push echenim007/distributed:v1.0.1
+docker tag distributed echenim007/fin-tech:1.0.0
+docker push echenim007/fin-tech:1.0.0
 
 
 # copy to kubernetes server

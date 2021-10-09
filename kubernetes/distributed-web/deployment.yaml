@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: fin-tech
-        image: echenim007/fin-tech:1.0.0
+        image: echenim007/fin-tech:latest
         resources:
           limits:
             memory: "128Mi"
