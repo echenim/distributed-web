@@ -1,20 +1,20 @@
 # distributed-web
 
 # create docker image
-docker build -t financial-web . 
+docker build -t ibank . 
 
 # check if image is created
 docker image ls
 
 # run application from docker
-docker run -p 29999:29999 -tid financial-web
+docker run -p 29999:29999 -tid financial-test-web
 
 sudo lsof -nP -iTCP -sTCP:LISTEN
 
 # Push to dockerhub
 docker login --username=echenim007
-docker tag distributed echenim007/financial-web:latest
-docker push echenim007/financial-web:latest
+docker tag ibank echenim007/ibank:latest
+docker push echenim007/ibank:latest
 
 
 # copy to kubernetes server
