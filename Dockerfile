@@ -1,4 +1,5 @@
 FROM golang:latest
+LABEL maintainer="Willaim Myron <william.echenim@gmail.com"
 
 RUN mkdir /build
 WORKDIR /build
