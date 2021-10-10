@@ -1,36 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fin-tech
+  name: financial-web
 spec:
   selector:
     matchLabels:
-      app: fin-tech
+      app: financial-web
   template:
     metadata:
       labels:
-        app: fin-tech
+        app: financial-web
     spec:
       containers:
       - name: fin-tech
-        image: echenim007/fin-tech:latest
+        image: echenim007/financial-web:latest
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
         - containerPort: 8181
+          protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: fin-tech
+  name: financial-web
 spec:
   selector:
-    app: fin-tech
+    app: financial-web
   ports:
     - protocol: TCP
       port: 8181
+      targetPort: 8181
   type: LoadBalancer
 
 
